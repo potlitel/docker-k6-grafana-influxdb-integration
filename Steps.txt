@@ -1,0 +1,80 @@
+K6 Grafana InfluxDb
+https://github.com/CymaticLabs/InfluxDBStudio
+https://www.youtube.com/results?search_query=+InfluxDB
+https://www.youtube.com/watch?v=EfcKAHMWCjM
+https://swapi.dev/
+https://hub.docker.com/_/influxdb
+Persisting Load Test Data with K6, InfluxDB, and Grafana (https://www.useanvil.com/blog/engineering/persisting-load-test-data-with-k6/)
+K6 results with InfluxDB and Grafana (https://blog.knoldus.com/k6-results-with-influxdb-and-grafana/)
+Beautiful Load Testing With K6 and Docker Compose (https://medium.com/swlh/beautiful-load-testing-with-k6-and-docker-compose-4454edb3a2e3)
+Datos de series temporales (https://www.ibm.com/docs/es/spss-modeler/saas?topic=models-time-series-data)
+Qué es InfluxDB y primeros pasos (https://openwebinars.net/blog/que-es-influxdb-y-primeros-pasos/#:~:text=InfluxDB%20es%20la%20plataforma%20de,por%20sensores%2C%20aplicaciones%20e%20infraestructura.)
+Influxdb Docker Tutorial 📒⚙| Influxdb Tutorial For Beginners | Influxdb Getting Started 👍 (https://www.youtube.com/watch?v=0CpHwszFjUY)
+How to set retention policies on influxdb docker container using entrypoint script in dockerfile (https://stackoverflow.com/questions/48905421/how-to-set-retention-policies-on-influxdb-docker-container-using-entrypoint-scri)
+Telegraf, InfluxDB, Grafana with docker-compose (https://wirelessthings.io/index.php/2023/01/31/telegraf-influxdb-grafana-with-docker-compose/)
+
+1- cd C:\Users\potli\OneDrive\Documentos\docker-k6-grafana-influxdb
+2- docker compose up -d influxdb grafana
+2- docker compose run k6 run /scripts/anyTest.js
+
+
+Por ver:
+https://medium.com/@dhanukadulanjana184/performance-load-testing-with-k6-influxdb-grafana-on-windows-d0d138bbf326
+
+pwsh> docker exec -it 5e9ad2449fc8 bash
+
+pwsh> docker exec -it 5e9ad2449fc8 influx --version
+InfluxDB shell version: 1.8.10
+
+show databases
+
+root@c8d3442689e8:/# influx
+Connected to http://localhost:8086 version 1.8.10
+InfluxDB shell version: 1.8.10
+> show databases
+name: databases
+name
+----
+k6
+_internal
+> use k6
+Using database k6
+> show measurements
+name: measurements
+name
+----
+checks
+data_received
+data_sent
+http_req_blocked
+http_req_connecting
+http_req_duration
+http_req_failed
+http_req_receiving
+http_req_sending
+http_req_tls_handshaking
+http_req_waiting
+http_reqs
+iteration_duration
+iterations
+vus
+vus_max
+>
+
+
+
+
+https://github.com/bcremer/docker-telegraf-influx-grafana-stack/tree/latest
+Contiene doc e info para documenta sobre InfluxDb:
+
+Run the influx client:
+
+$ docker-compose exec influxdb influx -execute 'SHOW DATABASES'
+
+Run the influx interactive console:
+
+$ docker-compose exec influxdb influx
+
+Connected to http://localhost:8086 version 1.8.0
+InfluxDB shell version: 1.8.0
+>
